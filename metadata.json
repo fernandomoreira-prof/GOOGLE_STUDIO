@@ -1,0 +1,6 @@
+{
+  "name": "Aura Health - Cuidados Médicos & Concierge VIP",
+  "description": "Aplicativo de saúde e bem-estar de ultra-luxo com agendamento médico, concierge preventivo, mapa de unidades e passe digital médico.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Aura Health - Cuidados Médicos &amp; Bem-Estar</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Inter & JetBrains Mono Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface": "#f7f9fb",
+            "tertiary-fixed": "#7df4ff",
+            "on-secondary-fixed-variant": "#3f465c",
+            "inverse-primary": "#93ccff",
+            "background": "#f7f9fb",
+            "error-container": "#ffdad6",
+            "outline": "#707881",
+            "on-secondary-fixed": "#131b2e",
+            "surface-container-high": "#e6e8ea",
+            "outline-variant": "#bfc7d2",
+            "primary-container": "#007bb9",
+            "surface-bright": "#f7f9fb",
+            "on-error": "#ffffff",
+            "secondary-fixed-dim": "#bec6e0",
+            "on-primary-fixed": "#001d31",
+            "on-tertiary-fixed": "#002022",
+            "surface-container-highest": "#e0e3e5",
+            "tertiary-container": "#00818a",
+            "surface-variant": "#e0e3e5",
+            "secondary-fixed": "#dae2fd",
+            "on-surface-variant": "#3f4850",
+            "surface-dim": "#d8dadc",
+            "surface-tint": "#006398",
+            "on-tertiary-container": "#f5feff",
+            "primary-fixed": "#cce5ff",
+            "on-error-container": "#93000a",
+            "on-primary": "#ffffff",
+            "inverse-surface": "#2d3133",
+            "surface-container": "#eceef0",
+            "surface-container-low": "#f2f4f6",
+            "on-secondary-container": "#5c647a",
+            "on-tertiary": "#ffffff",
+            "error": "#ba1a1a",
+            "primary-fixed-dim": "#93ccff",
+            "tertiary": "#00666d",
+            "on-tertiary-fixed-variant": "#004f54",
+            "tertiary-fixed-dim": "#00dbe9",
+            "on-secondary": "#ffffff",
+            "secondary-container": "#dae2fd",
+            "on-primary-container": "#fdfcff",
+            "on-surface": "#191c1e",
+            "secondary": "#565e74",
+            "inverse-on-surface": "#eff1f3",
+            "on-background": "#191c1e",
+            "primary": "#006194",
+            "on-primary-fixed-variant": "#004b73",
+            "surface-container-lowest": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "1rem",
+            "margin": "1.25rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.5rem",
+            "space-md": "1rem",
+            "space-sm": "0.5rem",
+            "space-xl": "2rem"
+          },
+          "fontFamily": {
+            "label-sm": ["Inter"],
+            "display-lg": ["Inter"],
+            "headline-lg": ["Inter"],
+            "label-md": ["Inter"],
+            "body-md": ["Inter"],
+            "title-md": ["Inter"],
+            "headline-sm": ["Inter"],
+            "data-mono": ["JetBrains Mono"],
+            "display-lg-mobile": ["Inter"],
+            "body-lg": ["Inter"]
+          },
+          "fontSize": {
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "600" }],
+            "display-lg": ["34px", { "lineHeight": "41px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-lg": ["26px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+            "body-md": ["15px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "title-md": ["17px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-sm": ["20px", { "lineHeight": "25px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "data-mono": ["14px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "display-lg-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-lg": ["17px", { "lineHeight": "23px", "letterSpacing": "-0.005em", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    /* Hide scrollbars for clean iOS aesthetic */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased font-body-md text-body-md min-h-full selection:bg-tertiary-fixed selection:text-on-tertiary-fixed relative overflow-x-hidden">
+<!-- Ambient Luxury Atmospheric Lighting Background -->
+<div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+<div class="absolute -top-32 -left-20 w-96 h-96 rounded-full bg-primary-fixed opacity-40 blur-3xl"></div>
+<div class="absolute top-1/4 -right-24 w-80 h-80 rounded-full bg-tertiary-fixed opacity-30 blur-3xl"></div>
+<div class="absolute top-2/3 left-10 w-96 h-96 rounded-full bg-secondary-fixed opacity-35 blur-3xl"></div>
+</div>
+<!-- iOS Dynamic Shell Mockup (Centered for mobile viewport standard) -->
+<div class="relative z-10 max-w-md mx-auto min-h-screen flex flex-col pb-32">
+<!-- iOS Native Top Bar: Dynamic Island & Status Area -->
+<header class="sticky top-0 z-50 w-full pt-2 px-6 bg-surface/80 backdrop-blur-2xl">
+<div class="flex items-center justify-between h-11 text-on-surface">
+<!-- Time -->
+<span class="font-title-md text-title-md font-semibold tracking-tight text-on-surface">9:41</span>
+<!-- Dynamic Island Hardware Pill -->
+<div class="w-28 h-7 bg-on-surface rounded-full flex items-center justify-between px-2.5 shadow-sm">
+<div class="w-2.5 h-2.5 rounded-full bg-surface-dim/40 ring-1 ring-on-surface/80"></div>
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed animate-pulse"></span>
+<span class="text-tertiary-fixed text-[10px] font-data-mono font-medium">Aura</span>
+</div>
+</div>
+<!-- iOS Hardware Status Icons -->
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[17px]">signal_cellular_4_bar</span>
+<span class="material-symbols-outlined text-[17px]">wifi</span>
+<span class="material-symbols-outlined text-[20px]">battery_full</span>
+</div>
+</div>
+<!-- TopAppBar Shared Component Anchor -->
+<div class="flex items-center justify-between py-3">
+<div class="flex items-center gap-3">
+<!-- Leading Avatar with VIP Status ring -->
+<div class="relative">
+<div class="w-12 h-12 rounded-full p-0.5 bg-gradient-to-tr from-primary to-tertiary-fixed shadow-md shadow-primary/20">
+<img class="w-full h-full rounded-full object-cover" data-alt="Close-up portrait of Sofia, an elegant Brazilian high-profile woman with radiant healthy skin, looking warm and confident in a crisp white tailored collar against a clean bright architectural clinic setting with subtle cyan ambient lighting and ultra luxury clinical aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDswEk7MmveF1oqJwPgtqE_CHQ2um19eQyqLv7t0EK87JaP6yWCvV5tMfcP-wokoqhX5W6CsskX-MEH3BGTbTm0vBKr91oCg7yzPSVKHGrdMnlWdNVUmwlyqDAXo7wxgxtEYjuYcT6jOcUcBaVbQTptQz8oZb6xMe3j6kk7BAKWqqb-dc1t0svJsZabzmj0PEy4Q-lNmOeWXwmiq3MmQzMwQLsiyam50DwsyJnQLVhNxS3dN9I-s9BYiA"/>
+</div>
+<div class="absolute -bottom-0.5 -right-0.5 w-4 h-4 rounded-full bg-surface flex items-center justify-center">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed shadow-[0_0_8px_#7df4ff]"></span>
+</div>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-on-surface">Olá, Sofia</span>
+<span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-semibold">Paciente VIP Platinum</span>
+</div>
+</div>
+</div>
+<!-- Trailing Notifications Action Button with Neon Pulse -->
+<button aria-label="Notificações" class="relative w-11 h-11 rounded-full bg-surface-container-lowest/80 backdrop-blur-md border border-surface-container-highest/80 flex items-center justify-center text-on-surface hover:opacity-80 active:scale-95 transition-all duration-200 shadow-sm">
+<span class="material-symbols-outlined text-primary">notifications</span>
+<!-- Neon Cyan Status Dot -->
+<span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-tertiary-fixed shadow-[0_0_8px_#7df4ff] ring-2 ring-surface-container-lowest animate-pulse"></span>
+</button>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 px-5 pt-3 space-y-6">
+<!-- Banner de Destaque: Check-up Anual Pré-agendado -->
+<section class="relative overflow-hidden rounded-[24px] bg-gradient-to-br from-[#0284C7] to-[#0369A1] p-5 text-on-primary shadow-xl shadow-primary/20 border border-surface-container-lowest/30">
+<!-- Subtle Glassmorphic Refraction Overlay -->
+<div class="absolute -right-12 -top-12 w-44 h-44 rounded-full bg-white/10 blur-2xl pointer-events-none"></div>
+<div class="absolute -left-10 -bottom-10 w-36 h-36 rounded-full bg-tertiary-fixed/20 blur-xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col justify-between">
+<div class="flex items-center justify-between mb-3">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest/20 backdrop-blur-md border border-surface-container-lowest/30">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed shadow-[0_0_6px_#7df4ff]"></span>
+<span class="font-label-sm text-label-sm text-on-primary font-medium tracking-wide">Concierge Preventivo</span>
+</div>
+<span class="font-data-mono text-[11px] text-tertiary-fixed font-semibold tracking-wider">AURA 2025</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm font-semibold text-white tracking-tight mb-1.5">
+            Check-up Anual Pré-agendado
+          </h2>
+<p class="font-body-md text-body-md text-white/90 leading-snug mb-5 max-w-[90%]">
+            Sua bateria de exames preventivos está pronta para agendamento prioritário.
+          </p>
+<div class="flex items-center justify-between pt-2">
+<button class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-surface-container-lowest text-primary font-title-md text-title-md font-semibold shadow-lg shadow-on-secondary-fixed/10 hover:opacity-95 active:scale-98 transition-transform duration-150">
+<span>Ver Detalhes</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-white/80">3 exames inclusos</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Seção: Próxima Consulta (Carrossel Horizontal) -->
+<section class="space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<h3 class="font-title-md text-title-md font-semibold text-on-surface tracking-tight">Próxima Consulta</h3>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed/20 text-tertiary text-label-sm font-label-sm font-semibold border border-tertiary-fixed/40">Confirmada</span>
+</div>
+<button class="text-primary font-label-md text-label-md font-medium hover:opacity-80 transition-opacity">Ver todas</button>
+</div>
+<div class="relative overflow-hidden rounded-[24px] bg-surface-container-lowest/80 backdrop-blur-xl border border-surface-container-highest/80 p-5 shadow-lg shadow-on-surface/5">
+<!-- Refraction Glow -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary-fixed/30 rounded-bl-full pointer-events-none"></div>
+<div class="flex items-start justify-between gap-4 mb-4">
+<div class="flex items-center gap-3">
+<div class="relative w-14 h-14 rounded-2xl overflow-hidden shadow-sm border border-surface-container-high flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Professional studio portrait of Dr. Marcelo Guimaraes, a distinguished Brazilian interventional cardiologist wearing a modern premium navy scrub and stetoscope, gentle trustworthy smile, clinical high-end minimalist hospital environment with soft directional lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEpzFymhV5hIhImOkAKMroU7LuqCgagsqx3R8qBQuBdK_XKHn4VTYnw4rSCM2Xkwa5WOKQE4U8ExboZwwhUdvHnJ_yhs3HUnguGIVPZ4iBIrCxZGNRRkJ5OrP1EbfHU6t3Nryq0EZixureI7EHqLWofr2Ftjjm4j8HQ0snZWvqhOHAcvtpsIwlctFnXoKpRnf-UUdGXFE2HeTs5YzXhorO6d0IV6Qoi-OCJf7vbZ6U9PlOSdVkr1ZBsA"/>
+</div>
+<div>
+<h4 class="font-title-md text-title-md font-semibold text-on-surface">Dr. Marcelo Guimarães</h4>
+<p class="font-body-md text-body-md text-secondary">Cardiologista Intervencionista</p>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="material-symbols-outlined text-tertiary text-[15px]" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">CRM/SP 148.920</span>
+</div>
+</div>
+</div>
+<!-- Date Indicator Pill -->
+<div class="bg-primary/10 border border-primary/20 rounded-2xl px-3 py-1.5 text-center flex-shrink-0">
+<span class="block font-label-sm text-label-sm uppercase font-bold text-primary">Amanhã</span>
+<span class="block font-title-md text-title-md font-semibold text-primary">14:30</span>
+</div>
+</div>
+<!-- Clinic Location Metadata -->
+<div class="flex items-center gap-2 py-2 px-3 rounded-xl bg-surface-container-low/70 border border-surface-container mb-4">
+<span class="material-symbols-outlined text-primary text-[18px]">domain</span>
+<span class="font-body-md text-body-md text-on-surface-variant truncate">Sala 402, Edifício Jardins • Torre A</span>
+</div>
+<!-- Bottom Action Buttons -->
+<div class="grid grid-cols-2 gap-3 pt-1">
+<button class="h-[46px] rounded-xl bg-surface-container-lowest border border-outline-variant/50 text-on-surface font-title-md text-title-md font-semibold flex items-center justify-center gap-2 hover:bg-surface-container-low active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px]">calendar_add_on</span>
+<span>Reagendar</span>
+</button>
+<!-- CTA: Rota no Mapa com Neon Glow -->
+<button class="h-[46px] rounded-xl bg-gradient-to-r from-primary to-primary-container text-on-primary font-title-md text-title-md font-semibold flex items-center justify-center gap-2 shadow-[0_4px_20px_0_rgba(0,240,255,0.35)] hover:opacity-95 active:scale-95 transition-all border border-tertiary-fixed/30">
+<span class="material-symbols-outlined text-[18px] text-tertiary-fixed" style="font-variation-settings: 'FILL' 1;">near_me</span>
+<span>Rota no Mapa</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Seção: Grid de Categorias Rápidas (Acesso Imediato VIP) -->
+<section class="space-y-3">
+<div class="flex items-center justify-between">
+<h3 class="font-title-md text-title-md font-semibold text-on-surface tracking-tight">Categorias Rápidas</h3>
+<span class="font-label-sm text-label-sm text-secondary">Acesso Exclusivo</span>
+</div>
+<div class="grid grid-cols-3 gap-2.5 sm:grid-cols-5">
+<!-- Item 1: Consultas -->
+<button class="flex flex-col items-center justify-center p-3 rounded-2xl bg-surface-container-lowest/80 backdrop-blur-lg border border-surface-container-highest hover:border-primary/40 active:scale-95 transition-all text-center group">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed/40 flex items-center justify-center mb-2 group-hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-primary text-[24px]" style="font-variation-settings: 'FILL' 1;">stethoscope</span>
+</div>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Consultas</span>
+<span class="font-label-sm text-label-sm text-secondary mt-0.5">Especialistas</span>
+</button>
+<!-- Item 2: Procedimentos -->
+<button class="flex flex-col items-center justify-center p-3 rounded-2xl bg-surface-container-lowest/80 backdrop-blur-lg border border-surface-container-highest hover:border-primary/40 active:scale-95 transition-all text-center group">
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed/40 flex items-center justify-center mb-2 group-hover:bg-secondary-fixed transition-colors">
+<span class="material-symbols-outlined text-primary text-[24px]" style="font-variation-settings: 'FILL' 1;">medical_services</span>
+</div>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Procedimentos</span>
+<span class="font-label-sm text-label-sm text-secondary mt-0.5">Clínicos</span>
+</button>
+<!-- Item 3: Exames -->
+<button class="flex flex-col items-center justify-center p-3 rounded-2xl bg-surface-container-lowest/80 backdrop-blur-lg border border-surface-container-highest hover:border-primary/40 active:scale-95 transition-all text-center group">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed/40 flex items-center justify-center mb-2 group-hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-primary text-[24px]">vital_signs</span>
+</div>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Exames</span>
+<span class="font-label-sm text-label-sm text-secondary mt-0.5">Diagnósticos</span>
+</button>
+<!-- Item 4: Telemedicina -->
+<button class="flex flex-col items-center justify-center p-3 rounded-2xl bg-surface-container-lowest/80 backdrop-blur-lg border border-surface-container-highest hover:border-primary/40 active:scale-95 transition-all text-center group">
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed/30 flex items-center justify-center mb-2 group-hover:bg-tertiary-fixed/50 transition-colors">
+<span class="material-symbols-outlined text-tertiary text-[24px]">videocam</span>
+</div>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Telemedicina</span>
+<span class="font-label-sm text-label-sm text-tertiary font-medium mt-0.5">Online 24h</span>
+</button>
+<!-- Item 5: Emergência VIP -->
+<button class="col-span-2 sm:col-span-1 flex flex-col items-center justify-center p-3 rounded-2xl bg-error-container/40 backdrop-blur-lg border border-error/30 hover:border-error active:scale-95 transition-all text-center group">
+<div class="w-12 h-12 rounded-xl bg-error/10 flex items-center justify-center mb-2 group-hover:bg-error/20 transition-colors">
+<span class="material-symbols-outlined text-error text-[24px]">e911_emergency</span>
+</div>
+<span class="font-label-md text-label-md font-semibold text-error">Emergência VIP</span>
+<span class="font-label-sm text-label-sm text-error/80 mt-0.5">Prioritário</span>
+</button>
+</div>
+</section>
+<!-- Seção: Médicos em Destaque (Carrossel Horizontal com Microinterações) -->
+<section class="space-y-3 pb-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<h3 class="font-title-md text-title-md font-semibold text-on-surface tracking-tight">Médicos em Destaque</h3>
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed shadow-[0_0_6px_#7df4ff]"></span>
+</div>
+<button class="text-primary font-label-md text-label-md font-medium hover:opacity-80 transition-opacity">Ver corpo clínico</button>
+</div>
+<!-- Scroll Horizontal List -->
+<div class="flex gap-4 overflow-x-auto no-scrollbar -mx-5 px-5 pb-2">
+<!-- Card Médico 1: Dermatologia -->
+<div class="w-64 flex-shrink-0 rounded-[24px] bg-surface-container-lowest/80 backdrop-blur-xl border border-surface-container-highest p-4 shadow-md shadow-on-surface/5 flex flex-col justify-between">
+<div>
+<div class="relative w-full h-36 rounded-2xl overflow-hidden mb-3 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Refined high resolution portrait of Dr. Helena Siqueira, senior dermatologist in a bright contemporary clinic interior in Sao Paulo, stylish architectural glass elements behind her, confident serene expression, natural soft illumination." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZONkWe3RdlTajAwTyCRv-U8hkymklZohYvyZ3Rl3a7R6712LH3B_fW7fCPumtUVfDOJVLJIWlnSIDTciNVsmRQrCPChmco0uugZuXQeLGa0kEauseTUd0w6FEtPb0D8BL3K-fQ5pZPXl_2n_rRuPzQpNMOyAKUzoQ2BwjTfLNQ-Ykac0eaXMnbwyruwwdey6vTQFNyzRiAUwz1vnUgHHNmPoFbgrnZicD1Mxh1dQe_3i3LpscMDTYrg"/>
+<div class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-md flex items-center gap-1 shadow-sm border border-surface-container-highest">
+<span class="material-symbols-outlined text-[13px] text-tertiary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-data-mono text-[11px] font-semibold text-on-surface">5.0</span>
+</div>
+<div class="absolute bottom-2 left-2 px-2 py-0.5 rounded-full bg-primary/80 backdrop-blur-md text-white font-label-sm text-[10px]">
+                  Disponível hoje
+                </div>
+</div>
+<h4 class="font-title-md text-title-md font-semibold text-on-surface">Dra. Helena Siqueira</h4>
+<p class="font-body-md text-body-md text-secondary text-sm">Dermatologia Avançada</p>
+<p class="font-label-sm text-label-sm text-outline mt-1">Hospital Sírio-Libanês</p>
+</div>
+<div class="pt-4 mt-2 border-t border-surface-container-highest/60 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">Consulta Concierge</span>
+<span class="font-data-mono text-label-md font-semibold text-primary">R$ 1.200</span>
+</div>
+<button class="px-3.5 py-2 rounded-xl bg-primary text-on-primary font-label-md text-label-md font-semibold hover:opacity-90 active:scale-95 transition-all shadow-sm">
+                Agendar
+              </button>
+</div>
+</div>
+<!-- Card Médico 2: Longevidade Saudável -->
+<div class="w-64 flex-shrink-0 rounded-[24px] bg-surface-container-lowest/80 backdrop-blur-xl border border-surface-container-highest p-4 shadow-md shadow-on-surface/5 flex flex-col justify-between">
+<div>
+<div class="relative w-full h-36 rounded-2xl overflow-hidden mb-3 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Distinguished portrait of Dr. Roberto Paiva, leading specialist in healthy longevity medicine, refined executive appearance in front of high-tech laboratory glass panels with soft blue and turquoise reflections, warm charismatic smile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCx8BxN9dI0_-90hxZHBrPIUbSLHO-8kWo-XaYjFoaG6Qa7Wocuj-7N_ZcL5dz1n-PR5ih5Gd_gr09uJtXAa8AzJZg3VelCf8v6n7izESl8PLPS2Ar_0P1KcIa0jcOfcTTFIIZ52SqWbpEpkuyV35YfV32dn6tSM8gq1o_EBGuttr0a3pbKkfs4RXrpXB-MtXThP0Dm7WMx5IDGa8FH6TpwsFg49-Nw3r2hsWt9Kp5ySVVwyPweW8qxzw"/>
+<div class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-md flex items-center gap-1 shadow-sm border border-surface-container-highest">
+<span class="material-symbols-outlined text-[13px] text-tertiary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-data-mono text-[11px] font-semibold text-on-surface">5.0</span>
+</div>
+<div class="absolute bottom-2 left-2 px-2 py-0.5 rounded-full bg-primary/80 backdrop-blur-md text-white font-label-sm text-[10px]">
+                  Online amanhã
+                </div>
+</div>
+<h4 class="font-title-md text-title-md font-semibold text-on-surface">Dr. Roberto Paiva</h4>
+<p class="font-body-md text-body-md text-secondary text-sm">Longevidade Saudável</p>
+<p class="font-label-sm text-label-sm text-outline mt-1">Fellowship Harvard Med</p>
+</div>
+<div class="pt-4 mt-2 border-t border-surface-container-highest/60 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">Consulta Concierge</span>
+<span class="font-data-mono text-label-md font-semibold text-primary">R$ 1.500</span>
+</div>
+<button class="px-3.5 py-2 rounded-xl bg-primary text-on-primary font-label-md text-label-md font-semibold hover:opacity-90 active:scale-95 transition-all shadow-sm">
+                Agendar
+              </button>
+</div>
+</div>
+<!-- Card Médico 3: Cardiologia / Checkup -->
+<div class="w-64 flex-shrink-0 rounded-[24px] bg-surface-container-lowest/80 backdrop-blur-xl border border-surface-container-highest p-4 shadow-md shadow-on-surface/5 flex flex-col justify-between">
+<div>
+<div class="relative w-full h-36 rounded-2xl overflow-hidden mb-3 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Executive portrait of Dr. Camila Fontana, prominent neurologist and brain health researcher in modern medical wellness retreat, wearing immaculate lab coat with silver pen, clean bright daylight streaming through architectural glass windows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuATk3zcWUyQGpVV7cCspxT-CQvNR5nUm_FZ9xrG223hRzSPA7HSvdbZLx_TCg9VsRp8ks_n0EpOsEXghiqnQ-fXs0qxZvOB27NC9SitiDc2izH4lXmTxTrULXg-6DchlWt91DdsMsAn_g7Hrtmle2E7brlXqUjRHgpKKKY5bMm4rB1VwazV9eOZYjQG7LDWGdiHuPXkU5msabr1dtvuVJ3-CkeSpDw0wu451Ep7fdhazmVf0-LRNSr5nQ"/>
+<div class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-md flex items-center gap-1 shadow-sm border border-surface-container-highest">
+<span class="material-symbols-outlined text-[13px] text-tertiary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-data-mono text-[11px] font-semibold text-on-surface">4.9</span>
+</div>
+<div class="absolute bottom-2 left-2 px-2 py-0.5 rounded-full bg-secondary/80 backdrop-blur-md text-white font-label-sm text-[10px]">
+                  Telemedicina
+                </div>
+</div>
+<h4 class="font-title-md text-title-md font-semibold text-on-surface">Dra. Camila Fontana</h4>
+<p class="font-body-md text-body-md text-secondary text-sm">Neurologia &amp; Sono</p>
+<p class="font-label-sm text-label-sm text-outline mt-1">Instituto Albert Einstein</p>
+</div>
+<div class="pt-4 mt-2 border-t border-surface-container-highest/60 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">Consulta Concierge</span>
+<span class="font-data-mono text-label-md font-semibold text-primary">R$ 1.350</span>
+</div>
+<button class="px-3.5 py-2 rounded-xl bg-primary text-on-primary font-label-md text-label-md font-semibold hover:opacity-90 active:scale-95 transition-all shadow-sm">
+                Agendar
+              </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar Shared Component Execution (Floating Glass Tab Bar) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-7 pt-2 pointer-events-none">
+<div class="pointer-events-auto w-full max-w-sm mx-auto h-16 rounded-full bg-surface-container-lowest/80 backdrop-blur-2xl border border-surface-container-highest/60 shadow-lg shadow-on-surface/5 flex items-center justify-around px-2">
+<!-- Tab 1: Início (Active State according to Shared Components JSON) -->
+<a aria-current="page" class="flex flex-col items-center justify-center text-primary font-semibold relative after:content-[''] after:w-1 after:h-1 after:bg-tertiary-fixed after:rounded-full after:mt-1 after:shadow-[0_0_8px_#7df4ff] active:scale-95 transition-transform duration-150 ease-out" href="#inicio">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-sm text-label-sm">Início</span>
+</a>
+<!-- Tab 2: Agendar (Inactive State) -->
+<a class="flex flex-col items-center justify-center text-secondary hover:text-on-surface active:scale-95 transition-transform duration-150 ease-out" href="#agendar">
+<span class="material-symbols-outlined text-[24px]">calendar_month</span>
+<span class="font-label-sm text-label-sm">Agendar</span>
+</a>
+<!-- Tab 3: Consultas (Inactive State) -->
+<a class="flex flex-col items-center justify-center text-secondary hover:text-on-surface active:scale-95 transition-transform duration-150 ease-out" href="#consultas">
+<span class="material-symbols-outlined text-[24px]">assignment</span>
+<span class="font-label-sm text-label-sm">Consultas</span>
+</a>
+<!-- Tab 4: Perfil (Inactive State) -->
+<a class="flex flex-col items-center justify-center text-secondary hover:text-on-surface active:scale-95 transition-transform duration-150 ease-out" href="#perfil">
+<span class="material-symbols-outlined text-[24px]">person</span>
+<span class="font-label-sm text-label-sm">Perfil</span>
+</a>
+</div>
+</nav>
+<!-- iOS Hardware Bottom Home Indicator Safe Zone Area -->
+<div class="fixed bottom-1.5 left-1/2 -translate-x-1/2 w-32 h-1 bg-on-surface/30 rounded-full pointer-events-none z-50"></div>
+</div>
+</body></html>

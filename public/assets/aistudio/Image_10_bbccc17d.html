@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Aura Health - Localização e Unidades</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface": "#f7f9fb",
+            "tertiary-fixed": "#7df4ff",
+            "on-secondary-fixed-variant": "#3f465c",
+            "inverse-primary": "#93ccff",
+            "background": "#f7f9fb",
+            "error-container": "#ffdad6",
+            "outline": "#707881",
+            "on-secondary-fixed": "#131b2e",
+            "surface-container-high": "#e6e8ea",
+            "outline-variant": "#bfc7d2",
+            "primary-container": "#007bb9",
+            "surface-bright": "#f7f9fb",
+            "on-error": "#ffffff",
+            "secondary-fixed-dim": "#bec6e0",
+            "on-primary-fixed": "#001d31",
+            "on-tertiary-fixed": "#002022",
+            "surface-container-highest": "#e0e3e5",
+            "tertiary-container": "#00818a",
+            "surface-variant": "#e0e3e5",
+            "secondary-fixed": "#dae2fd",
+            "on-surface-variant": "#3f4850",
+            "surface-dim": "#d8dadc",
+            "surface-tint": "#006398",
+            "on-tertiary-container": "#f5feff",
+            "primary-fixed": "#cce5ff",
+            "on-error-container": "#93000a",
+            "on-primary": "#ffffff",
+            "inverse-surface": "#2d3133",
+            "surface-container": "#eceef0",
+            "surface-container-low": "#f2f4f6",
+            "on-secondary-container": "#5c647a",
+            "on-tertiary": "#ffffff",
+            "error": "#ba1a1a",
+            "primary-fixed-dim": "#93ccff",
+            "tertiary": "#00666d",
+            "on-tertiary-fixed-variant": "#004f54",
+            "tertiary-fixed-dim": "#00dbe9",
+            "on-secondary": "#ffffff",
+            "secondary-container": "#dae2fd",
+            "on-primary-container": "#fdfcff",
+            "on-surface": "#191c1e",
+            "secondary": "#565e74",
+            "inverse-on-surface": "#eff1f3",
+            "on-background": "#191c1e",
+            "primary": "#006194",
+            "on-primary-fixed-variant": "#004b73",
+            "surface-container-lowest": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "1rem",
+            "margin": "1.25rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.5rem",
+            "space-md": "1rem",
+            "space-sm": "0.5rem",
+            "space-xl": "2rem"
+          },
+          "fontFamily": {
+            "label-sm": ["Inter"],
+            "display-lg": ["Inter"],
+            "headline-lg": ["Inter"],
+            "label-md": ["Inter"],
+            "body-md": ["Inter"],
+            "title-md": ["Inter"],
+            "headline-sm": ["Inter"],
+            "data-mono": ["JetBrains Mono"],
+            "display-lg-mobile": ["Inter"],
+            "body-lg": ["Inter"]
+          },
+          "fontSize": {
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "600" }],
+            "display-lg": ["34px", { "lineHeight": "41px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-lg": ["26px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+            "body-md": ["15px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "title-md": ["17px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-sm": ["20px", { "lineHeight": "25px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "data-mono": ["14px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "display-lg-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-lg": ["17px", { "lineHeight": "23px", "letterSpacing": "-0.005em", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    
+    /* Pulso luminoso ciano neon personalizado */
+    @keyframes aura-pulse {
+      0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 240, 255, 0.7);
+      }
+      70% {
+        transform: scale(1.15);
+        box-shadow: 0 0 0 20px rgba(0, 240, 255, 0);
+      }
+      100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 240, 255, 0);
+      }
+    }
+    .neon-pulse-ring {
+      animation: aura-pulse 2.4s infinite cubic-bezier(0.4, 0, 0.6, 1);
+    }
+
+    /* Minimalist Apple Maps Tile Overlay Simulation */
+    .map-pattern {
+      background-color: #f1f6f9;
+      background-image: 
+        radial-gradient(#d6e6f0 1.2px, transparent 1.2px),
+        linear-gradient(135deg, rgba(224, 242, 254, 0.45) 25%, transparent 25%),
+        linear-gradient(225deg, rgba(224, 242, 254, 0.45) 25%, transparent 25%),
+        linear-gradient(45deg, rgba(224, 242, 254, 0.45) 25%, transparent 25%),
+        linear-gradient(315deg, rgba(224, 242, 254, 0.45) 25%, #f1f6f9 25%);
+      background-position: 0 0, 40px 0, 40px 0, 0 0, 0 0;
+      background-size: 24px 24px, 80px 80px, 80px 80px, 80px 80px, 80px 80px;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased select-none font-body-md flex justify-center min-h-screen">
+<!-- Mobile Viewport Frame (iOS Device Shell) -->
+<div class="relative w-full max-w-[430px] h-[932px] max-h-screen bg-background overflow-hidden flex flex-col shadow-2xl">
+<!-- MAP BACKGROUND CANVAS (Clean Apple Maps Aesthetic) -->
+<div class="absolute inset-0 w-full h-full map-pattern overflow-hidden" data-location="São Paulo" style="">
+<!-- Simulated Vector Road Geometry & Water Bodies -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none opacity-80" xmlns="http://www.w3.org/2000/svg">
+<!-- River / Water canal accent -->
+<path d="M-40,180 C120,240 180,120 320,310 C400,430 450,470 500,490" fill="none" stroke="#bae6fd" stroke-linecap="round" stroke-width="28"></path>
+<!-- Arterial Avenues -->
+<path d="M-20,380 L460,330" fill="none" stroke="#ffffff" stroke-width="14"></path>
+<path d="M-20,380 L460,330" fill="none" stroke="#e0e7ff" stroke-width="10"></path>
+<path d="M120,-20 L280,720" fill="none" stroke="#ffffff" stroke-width="12"></path>
+<path d="M120,-20 L280,720" fill="none" stroke="#dbeafe" stroke-width="8"></path>
+<!-- Av. Europa & Av. Faria Lima intersections -->
+<path d="M60,260 C160,290 280,410 380,480" fill="none" stroke="#ffffff" stroke-width="16"></path>
+<path d="M60,260 C160,290 280,410 380,480" fill="none" stroke="#cbd5e1" stroke-width="10"></path>
+<!-- Route GPS glow line to Jardins -->
+<path d="M140,540 C170,460 190,420 226,388" fill="none" stroke="#007bb9" stroke-dasharray="1 8" stroke-linecap="round" stroke-width="6"></path>
+<path d="M140,540 C170,460 190,420 226,388" fill="none" stroke="#7df4ff" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+<!-- Map Landmarks & Neighborhood labels -->
+<div class="absolute top-[280px] left-[45px] text-[11px] font-semibold text-secondary tracking-widest uppercase opacity-60">Jardins</div>
+<div class="absolute top-[240px] right-[40px] text-[11px] font-semibold text-secondary tracking-widest uppercase opacity-60">Itaim Bibi</div>
+<div class="absolute top-[410px] left-[70px] text-[10px] font-medium text-outline">Av. Europa</div>
+<!-- Secondary Clinica Marker: Faria Lima (Inactive) -->
+<div class="absolute top-[310px] right-[75px] flex items-center gap-1.5 opacity-80 cursor-pointer transition-transform hover:scale-105 active:scale-95">
+<div class="w-8 h-8 rounded-full bg-surface-container-lowest/90 backdrop-blur-md border border-outline-variant/60 shadow-md flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">local_hospital</span>
+</div>
+<span class="text-[11px] font-semibold bg-surface-container-lowest/85 backdrop-blur-md px-2 py-0.5 rounded-full border border-outline-variant/40 shadow-sm text-on-surface">Faria Lima</span>
+</div>
+<!-- Pin Futurista de Luxo (Aura Health Jardins - Flagship) -->
+<div class="absolute top-[350px] left-[200px] -translate-x-1/2 -translate-y-full flex flex-col items-center cursor-pointer z-10">
+<!-- Badge Flutuante no Pin -->
+<div class="bg-inverse-surface text-surface-container-lowest text-[11px] font-semibold tracking-tight px-2.5 py-1 rounded-full shadow-lg flex items-center gap-1.5 mb-1.5 border border-tertiary-fixed/30 backdrop-blur-md">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed animate-ping"></span>
+<span>Aura Health Flagship</span>
+</div>
+<!-- O Pin Iluminado -->
+<div class="relative flex items-center justify-center">
+<!-- Neon Aura Pulse Ring -->
+<div class="absolute w-14 h-14 rounded-full bg-tertiary-fixed/25 neon-pulse-ring"></div>
+<div class="absolute w-10 h-10 rounded-full bg-primary/20 blur-sm"></div>
+<!-- Pin Body -->
+<div class="relative z-10 w-11 h-11 rounded-full bg-gradient-to-tr from-primary to-primary-container border-2 border-surface-container-lowest shadow-[0_8px_20px_rgba(0,123,185,0.45)] flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">health_and_safety</span>
+</div>
+<!-- Pin Spike -->
+<div class="absolute -bottom-1.5 z-10 w-2.5 h-2.5 bg-primary rotate-45 border-r-2 border-b-2 border-surface-container-lowest"></div>
+</div>
+<!-- Ground Ripple / Contact Shadow -->
+<div class="w-7 h-2 bg-on-surface/20 rounded-full blur-[2px] mt-2"></div>
+</div>
+<!-- Floating Map Utility Action (Recentrar / GPS) -->
+<div class="absolute right-5 top-[230px] flex flex-col gap-2.5 z-20">
+<button class="w-11 h-11 rounded-full bg-surface-container-lowest/85 backdrop-blur-xl border border-white/80 shadow-[0_8px_24px_rgba(15,23,42,0.08)] flex items-center justify-center text-primary active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">my_location</span>
+</button>
+<button class="w-11 h-11 rounded-full bg-surface-container-lowest/85 backdrop-blur-xl border border-white/80 shadow-[0_8px_24px_rgba(15,23,42,0.08)] flex items-center justify-center text-secondary active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[20px]">layers</span>
+</button>
+</div>
+</div>
+<!-- HEADER FLUTUANTE COM DYNAMIC ISLAND E BARRA DE BUSCA -->
+<header class="relative z-30 pt-3 px-5 flex flex-col gap-3 pointer-events-auto">
+<!-- iOS Status Bar & Dynamic Island -->
+<div class="flex items-center justify-between text-on-surface pt-1 px-1">
+<!-- Hora Realista -->
+<div class="w-12 text-left font-semibold text-[15px] tracking-tight">9:41</div>
+<!-- Dynamic Island Hardware Anchor -->
+<div class="w-[124px] h-[34px] bg-black rounded-full flex items-center justify-between px-3 text-white shadow-md">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-[#00F0FF] animate-pulse"></span>
+<span class="text-[10px] font-medium tracking-tight text-slate-300">Aura GPS</span>
+</div>
+<span class="material-symbols-outlined text-[13px] text-tertiary-fixed">near_me</span>
+</div>
+<!-- Ícones de Sistema iOS -->
+<div class="w-12 flex items-center justify-end gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[17px]">signal_cellular_4_bar</span>
+<span class="material-symbols-outlined text-[17px]">wifi</span>
+<span class="material-symbols-outlined text-[20px]">battery_charging_full</span>
+</div>
+</div>
+<!-- Barra de Busca Glassmorphic de Luxo -->
+<div class="mt-1 relative flex items-center bg-surface-container-lowest/80 backdrop-blur-2xl border border-white/90 rounded-[20px] shadow-[0_10px_30px_-10px_rgba(2,132,199,0.12)] px-4 h-[52px] transition-all focus-within:ring-2 focus-within:ring-primary/40">
+<span class="material-symbols-outlined text-primary text-[22px] mr-3">search</span>
+<input class="bg-transparent border-0 outline-none p-0 text-on-surface placeholder:text-outline text-body-md w-full focus:ring-0 font-body-md" placeholder="Buscar clínica ou unidade próxima" type="text" value="Jardins"/>
+<button class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+</button>
+</div>
+<!-- Seletor Rápido de Unidades (Chips Glassmorphism) -->
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1">
+<!-- Chip Ativo (Jardins) -->
+<button class="flex-shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md shadow-[0_4px_16px_rgba(0,123,185,0.35)] transition-transform active:scale-95 border border-primary-container">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed shadow-[0_0_6px_#00F0FF]"></span>
+<span>Jardins (Principal)</span>
+</button>
+<!-- Chip 2 (Faria Lima) -->
+<button class="flex-shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-surface-container-lowest/80 backdrop-blur-xl border border-white/90 text-on-surface font-label-md text-label-md shadow-sm hover:bg-surface-container-lowest transition-all active:scale-95">
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+<span>Faria Lima</span>
+</button>
+<!-- Chip 3 (Alphaville) -->
+<button class="flex-shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-surface-container-lowest/80 backdrop-blur-xl border border-white/90 text-on-surface font-label-md text-label-md shadow-sm hover:bg-surface-container-lowest transition-all active:scale-95">
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+<span>Alphaville</span>
+</button>
+</div>
+</header>
+<!-- BOTTOM SHEET DESLIZANTE (Gaveta Inferior iOS Glassmorphic) -->
+<div class="mt-auto relative z-30 w-full bg-surface-container-lowest/92 backdrop-blur-3xl rounded-t-[36px] border-t border-white/95 shadow-[0_-15px_40px_-10px_rgba(15,23,42,0.12)] px-5 pt-3 pb-8 flex flex-col transition-all">
+<!-- Indicador de Arraste (Pill Cinza) -->
+<div class="w-11 h-1.2 bg-outline-variant/70 rounded-full mx-auto mb-3.5 h-[5px]"></div>
+<!-- Cabeçalho da Unidade e Status -->
+<div class="flex items-start justify-between gap-3">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<h1 class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-bold">Aura Health - Unidade Jardins Flagship</h1>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">location_on</span>
+            Av. Europa, 850 - Jardins, São Paulo - SP
+          </p>
+</div>
+<!-- Distintivo de Unidade Conceito VIP -->
+<span class="px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed text-label-sm font-label-sm border border-primary-fixed-dim/60 shadow-sm whitespace-nowrap">
+          VIP Lounge
+        </span>
+</div>
+<!-- Metadados Rápidos (Tempo, Trânsito e Horário) -->
+<div class="grid grid-cols-2 gap-2.5 mt-3.5 pt-3 border-t border-surface-container-highest/60">
+<!-- Card Tempo / GPS -->
+<div class="flex items-center gap-2.5 p-2 rounded-2xl bg-surface-container-low/70 border border-white/60">
+<div class="w-8 h-8 rounded-xl bg-surface-container-lowest flex items-center justify-center text-primary shadow-xs">
+<span class="material-symbols-outlined text-[18px]">directions_car</span>
+</div>
+<div>
+<div class="font-data-mono text-data-mono font-semibold text-on-surface tracking-tight">12 min de você</div>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="text-[10px] font-bold text-emerald-700 tracking-wide uppercase">Trânsito Livre</span>
+</div>
+</div>
+</div>
+<!-- Card Horário -->
+<div class="flex items-center gap-2.5 p-2 rounded-2xl bg-surface-container-low/70 border border-white/60">
+<div class="w-8 h-8 rounded-xl bg-surface-container-lowest flex items-center justify-center text-tertiary shadow-xs">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+</div>
+<div>
+<div class="text-[12px] font-semibold text-on-surface">Aberto hoje</div>
+<div class="text-[11px] text-on-surface-variant font-medium">Até às 21:00</div>
+</div>
+</div>
+</div>
+<!-- Comodidades e Serviços VIP (Tags em pílulas com ícones) -->
+<div class="mt-3.5">
+<div class="text-label-sm font-label-sm text-secondary uppercase tracking-wider mb-2">Comodidades &amp; Exclusividades</div>
+<div class="flex flex-wrap gap-2">
+<!-- Tag 1: Valet -->
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant/40 shadow-xs text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary">local_parking</span>
+<span class="text-[12px] font-medium">Valet Cortesia</span>
+</div>
+<!-- Tag 2: Concierge & Lounge -->
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant/40 shadow-xs text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary">local_cafe</span>
+<span class="text-[12px] font-medium">Concierge &amp; Lounge Bar</span>
+</div>
+<!-- Tag 3: Acessibilidade -->
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant/40 shadow-xs text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary">accessible</span>
+<span class="text-[12px] font-medium">Acessibilidade Total</span>
+</div>
+<!-- Tag 4: Sala VIP -->
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant/40 shadow-xs text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary">bed</span>
+<span class="text-[12px] font-medium">Sala de Repouso VIP</span>
+</div>
+</div>
+</div>
+<!-- Ações Rápidas (Botões de Alta Fidelidade) -->
+<div class="mt-4 flex flex-col gap-2.5">
+<!-- Botão Primário: Como Chegar -->
+<button class="w-full h-[52px] rounded-[16px] bg-gradient-to-r from-primary to-primary-container text-on-primary font-title-md text-title-md font-semibold flex items-center justify-center gap-2 shadow-[0_8px_24px_rgba(0,97,148,0.3)] border border-white/20 active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">turn_right</span>
+<span>Como Chegar (Waze / Apple Maps)</span>
+</button>
+<!-- Grade com Ações Secundárias -->
+<div class="grid grid-cols-2 gap-2.5">
+<!-- Botão Secundário: Ligar -->
+<button class="h-[46px] rounded-[16px] bg-surface-container-lowest/80 backdrop-blur-md border border-outline-variant/50 text-on-surface font-label-md text-label-md flex items-center justify-center gap-1.5 hover:bg-surface-container-low active:scale-[0.98] transition-all shadow-xs">
+<span class="material-symbols-outlined text-[18px] text-primary">support_agent</span>
+<span>Ligar para Concierge</span>
+</button>
+<!-- Botão Secundário: Fotos -->
+<button class="h-[46px] rounded-[16px] bg-surface-container-lowest/80 backdrop-blur-md border border-outline-variant/50 text-on-surface font-label-md text-label-md flex items-center justify-center gap-1.5 hover:bg-surface-container-low active:scale-[0.98] transition-all shadow-xs">
+<span class="material-symbols-outlined text-[18px] text-primary">photo_library</span>
+<span>Fotos da Unidade</span>
+</button>
+</div>
+</div>
+<!-- iOS Home Indicator -->
+<div class="w-36 h-1 bg-on-surface/30 rounded-full mx-auto mt-4"></div>
+</div>
+</div>
+</body></html>
